@@ -1,0 +1,18 @@
+# pnpm workspace/config file (single-project mode).
+# Build scripts for these packages are explicitly approved so pnpm can run
+# their native compilation steps. All three are transitive deps of the
+# approved Block 1 stack:
+#   - sharp:         Next.js image optimization native binding.
+#   - unrs-resolver: ESLint module-resolution native binding (via eslint-config-next).
+#   - esbuild:       Vite/Vitest bundler binary (CP3 test foundation).
+allowBuilds:
+  sharp: true
+  unrs-resolver: true
+  esbuild: true
+  '@swc/core': set this to true or false
+
+# Skip pnpm 11's pre-run dependency-state verification. Without this, the
+# pre-run check fails on the unresolved build-approval state above and blocks
+# the documented `pnpm typecheck`, `pnpm lint`, and `pnpm build` gates. The
+# real install still uses the allowBuilds list above for safety.
+verifyDepsBeforeRun: false

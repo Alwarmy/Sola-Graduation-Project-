@@ -1,0 +1,66 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  padding: 0.55rem 1rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+  user-select: none;
+}
+
+.button:disabled,
+.button[aria-busy="true"] {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.primary {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+.primary:hover:not(:disabled):not([aria-busy="true"]) {
+  background: #000;
+}
+
+.secondary {
+  background: #fff;
+  color: #111;
+  border-color: #d6d6d6;
+}
+.secondary:hover:not(:disabled):not([aria-busy="true"]) {
+  border-color: #999;
+}
+
+.ghost {
+  background: transparent;
+  color: #111;
+  border-color: transparent;
+}
+.ghost:hover:not(:disabled):not([aria-busy="true"]) {
+  background: #f1f1f1;
+}
+
+.danger {
+  background: #b91c1c;
+  color: #fff;
+  border-color: #b91c1c;
+}
+.danger:hover:not(:disabled):not([aria-busy="true"]) {
+  background: #991616;
+}
+
+.sizeSm {
+  padding: 0.35rem 0.7rem;
+  font-size: 0.875rem;
+}
+.sizeMd {
+  padding: 0.55rem 1rem;
+  font-size: 1rem;
+}

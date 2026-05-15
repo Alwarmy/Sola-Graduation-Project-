@@ -1,0 +1,40 @@
+.input,
+.textarea,
+.select {
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: 0.55rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #d6d6d6;
+  background: #fff;
+  color: #111;
+  line-height: 1.4;
+  transition: border-color 120ms ease;
+}
+
+.textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 1px;
+  border-color: #1d4ed8;
+}
+
+.input[aria-invalid="true"],
+.textarea[aria-invalid="true"],
+.select[aria-invalid="true"] {
+  border-color: #b91c1c;
+}
+
+.input:disabled,
+.textarea:disabled,
+.select:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
